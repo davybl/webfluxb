@@ -16,7 +16,7 @@ body {
 
 /* Header & Navigation */
 header .hero {
-  position: sticky;
+  position: fixed;
   top: 0;
   display: flex;
   justify-content: space-between;
