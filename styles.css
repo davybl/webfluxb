@@ -101,6 +101,7 @@ header .hero {
   align-items: center;
   flex-wrap: nowrap;
   padding: 20px;
+  height: 20vh;
 }
 
 .introduction {
