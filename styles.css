@@ -1,15 +1,10 @@
 /* Base Reset */
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html{
-  box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-*, *::before, *::after{
-  box-sizing: inherit;
 }
 
 body {
@@ -138,7 +133,7 @@ header .hero {
 }
 
 .tech-genius {
-  width: 20vw;
+  width: 22vw;
   height: 22vh;
   border-radius: 50%;
 }
@@ -158,14 +153,14 @@ h2 {
   margin: 2px auto;
   font-family: "Brush Script MT", cursive, sans-serif;
   letter-spacing: 2px;
-  font-size: 70px;
+  font-size: 60px;
 }
 
 p {
   margin: 1px;
   line-height: 1.5;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .bold {
@@ -178,16 +173,18 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  width: 75vw;
-  margin: auto;
+  width: 90%;
+  margin:0 auto;
+  max-width: 1200px;
 }
 
 .project-card {
-  background: #f9f9f9;
+  background: #abdef8;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
+  border-left: 8px solid rgb(236, 236, 161);
 }
 
 .project-card img {
@@ -211,18 +208,14 @@ p {
   text-align: center;
 }
 
-
 .service-cards {
-  background: rgb(189, 220, 252);
-  border: 1px solid rgb(213, 241, 240);
-  border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px;
-  width: 75vw;
-  justify-content: center;
+  width: 90%;
   margin: auto;
+  max-width: 1200px;
 }
 
 .service-card {
@@ -231,7 +224,7 @@ p {
   padding: 20px;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-left: 10px solid rgb(213, 5, 250);
 }
 
 .service-card:hover {
@@ -339,12 +332,13 @@ p {
   right: 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .quote-container {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 30px 20px;
   }
+  
   .project-query{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -354,7 +348,6 @@ p {
   .service-cards{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
     text-align: center;
   }
   
@@ -364,7 +357,7 @@ p {
     text-align: center;
     margin-top: 20px;
   }
-
+  
   .quote-right {
     align-items: center;
   }
@@ -424,6 +417,12 @@ p {
     display: none;
     z-index: 1001;
   }
+
+  .nav-links.active {
+    display: flex;
+    z-index: 1001;
+  }
+}
 
   .nav-links.active {
     display: flex;
