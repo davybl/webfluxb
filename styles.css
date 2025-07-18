@@ -4,7 +4,12 @@
 }
 
 html{
+  box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
 }
 
 body {
@@ -206,12 +211,17 @@ p {
   text-align: center;
 }
 
+
 .service-cards {
+  background: rgb(189, 220, 252);
+  border: 1px solid rgb(213, 241, 240);
+  border-radius: 8px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px;
   width: 75vw;
+  justify-content: center;
   margin: auto;
 }
 
@@ -221,6 +231,7 @@ p {
   padding: 20px;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .service-card:hover {
@@ -343,6 +354,7 @@ p {
   .service-cards{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     text-align: center;
   }
   
@@ -398,10 +410,6 @@ p {
 
 .nav-links.active {
   display: flex !important;
-}
-
-@media(max-width){
-  grid-template-columns: 1fr;
 }
 
 /* But on larger screens, keep your original layout */
