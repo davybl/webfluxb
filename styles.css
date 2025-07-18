@@ -423,7 +423,6 @@ p {
     z-index: 1001;
   }
 }
-
   .nav-links.active {
     display: flex;
     z-index: 1001;
