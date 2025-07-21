@@ -94,14 +94,19 @@ header .hero {
   }
 }
 
-/* Intro Section */
+/* Intro Section (UPDATED) */
 .intro {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Prevent wrapping on desktop, handled by media query for mobile */
   padding: 20px;
-  height: 20vh;
+  min-height: 50vh; /* Increased height for better visual impact */
+  /* Remove 'height: 20vh;' if it was explicitly set to avoid conflicts */
+  margin: 20px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 0 20px #bbb;
 }
 
 .introduction {
@@ -133,11 +138,19 @@ header .hero {
   background-color: rgb(77, 201, 77);
 }
 
-.tech-genius {
-  width: 22vw;
-  height: 22vh;
-  border-radius: 50%;
+/* NEW: Styling for the Font Awesome icon replacing the image */
+.tech-genius-icon {
+  font-size: 10vw; /* Adjust size relative to viewport width for responsiveness */
+  color: #3498DB; /* A professional blue color */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  /* Old .tech-genius styles like width, height, border-radius are removed/overridden */
 }
+
+.tech-genius-icon:hover {
+  transform: translateY(-5px); /* Lift slightly on hover */
+}
+
 
 /* Welcome Section */
 .s-welcome,
@@ -333,7 +346,22 @@ p {
   right: 40px;
 }
 
-@media (max-width: 760px) {
+/* Media queries for responsiveness (UPDATED .intro) */
+@media (max-width: 768px) {
+  .intro { /* Main intro section stacks vertically */
+    flex-direction: column;
+    min-height: auto; /* Allow height to adjust based on content */
+    padding: 40px 20px; /* More padding when stacked */
+  }
+
+  .introduction { /* Space between text and icon when stacked */
+    margin-bottom: 30px;
+  }
+
+  .tech-genius-icon { /* Icon scales up on mobile for better visibility */
+    font-size: 25vw;
+  }
+
   .quote-container {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -342,15 +370,15 @@ p {
   
   .project-query{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    overflow: scroll;
+    grid-template-columns: repeat(4, 1fr); /* Consider using auto-fit for truly responsive */
+    overflow: scroll; /* Still allows horizontal scroll for small screens if too many columns */
     gap: 20px;
   }
   
   .service-cards{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    overflow: scroll;
+    overflow: scroll; /* Allows horizontal scroll if cards are too wide */
     text-align: center;
   }
   
@@ -400,6 +428,7 @@ p {
 }
 
 /* === Force-hide mobile nav until hamburger clicked === */
+/* Removed redundant declarations at the end, consolidated here */
 .nav-links {
   display: none !important;
 }
@@ -415,19 +444,4 @@ p {
   }
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    z-index: 1001;
-  }
-
-  .nav-links.active {
-    display: flex;
-    z-index: 1001;
-  }
-}
-  .nav-links.active {
-    display: flex;
-    z-index: 1001;
-  }
-}
+/* Redundant media query removed from original, only one needed */
