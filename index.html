@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Davy's Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
@@ -12,7 +13,7 @@
     <section class="hero">
       <img class="logo" src="https://i.postimg.cc/qvtqdBRP/logo-myportfolio.jpg" alt="Davy's Logo" />
       <nav class="navbar">
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">&#9776;
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links" id="nav-links">
@@ -33,12 +34,11 @@
         <p>Turning ideas into interactive websites</p>
         <button class="hire-me">Hire Me</button>
       </div>
-      <img class="tech-genius" src="https://i.postimg.cc/52CV9XVM/genius-tech.jpg" alt="A Genius Mind" />
+      <i class="fas fa-laptop-code tech-genius-icon"></i>
     </div>
   </header>
 
   <main>
-    <!-- WELCOME SECTION -->
     <section id="welcome" class="s-welcome">
       <h2 class="special">Welcome!!</h2>
       <p class="welcome-message">
@@ -47,7 +47,6 @@
       <p><span class="bold">"Visibility isn't just marketing, it's the gateway to global opportunity."</span></p>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects" class="projects">
       <h2>Samples & Projects</h2>
       <div class="project-query">
@@ -86,7 +85,6 @@
       <p>These are some of the projects I've worked on with screenshots of how responsive they are both on mobile and large screen devices such as tablets to large computers.</p>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="services">
       <h2>Our Services</h2>
       <div class="service-cards no-wrap">
@@ -109,7 +107,6 @@
       <p><span class="bold">"When you open your doors to the world online, the world steps in to do business"</span></p>
     </section>
 
-    <!-- QUOTE -->
     <section id="quote" class="quote-section">
       <div class="quote-container">
         <div class="quote-left">
@@ -141,7 +138,6 @@
     </section>
   </main>
 
-  <!-- LIGHTBOX & SCRIPTS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
   <script>
     // Hamburger toggle + auto-close
@@ -171,7 +167,6 @@
     });
   </script>
 
-  <!-- FOOTER -->
   <footer style="text-align:center; padding:20px 0; font-size:14px; color:#666;">
     &copy; 2025 David Blessing. All rights reserved.
   </footer>
