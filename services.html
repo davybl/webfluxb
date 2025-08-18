@@ -1,0 +1,91 @@
+<!-- services.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services — Webfluxb</title>
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="container">
+      <div class="left">
+        <h1>Services — what I do</h1>
+        <p class="lede">This expands the home services. Use the same service slugs on the pricing page to attach prices.</p>
+
+        <div id="services-grid" class="grid"></div>
+
+        <div class="howto">
+          <h4>How to use these entries</h4>
+          <ol>
+            <li>Keep <code>services.js</code> as the source of truth.</li>
+            <li>Use slug to attach prices on <code>/pricing</code>.</li>
+            <li>Keep short card text, put details in modal or pricing page.</li>
+          </ol>
+        </div>
+      </div>
+
+      <aside class="right">
+        <div class="contact-card">
+          <h2>Let's work together</h2>
+          <p class="muted">Quick contact — I usually reply within a day.</p>
+          <form id="contact-form">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" placeholder="Email" type="email" required />
+            <textarea name="message" rows="4" placeholder="Project brief" required></textarea>
+            <div class="actions">
+              <button type="submit" class="btn-accent">Send message</button>
+              <a class="btn-outline" href="https://wa.me/">Chat on WhatsApp</a>
+            </div>
+            <p class="muted tiny">Prefer calls? Add your phone in the message.</p>
+          </form>
+
+          <div class="meta">
+            <p><strong>Location:</strong> Nairobi / Remote</p>
+            <p class="muted tiny">Student discounts — mention your student ID.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script type="module">
+    import { SERVICES } from './services.js';
+
+    const container = document.getElementById('services-grid');
+
+    function createCard(s) {
+      const article = document.createElement('article');
+      article.className = 'card';
+      article.innerHTML = `
+        <div class="card-head">
+          <div>
+            <h3>${s.title}</h3>
+            <p class="short">${s.short}</p>
+          </div>
+          <div class="meta-id">ID: <code>${s.id}</code></div>
+        </div>
+        <details class="details">
+          <summary>More details</summary>
+          <p>${s.details}</p>
+          <p class="slug">Service slug: <code>${s.slug}</code></p>
+        </details>
+        <div class="card-actions">
+          <a class="btn-outline" href="/pricing.html?service=${encodeURIComponent(s.slug)}">Match price</a>
+          <a class="btn-accent" href="/quote.html?service=${encodeURIComponent(s.slug)}">Request quote</a>
+        </div>`;
+      return article;
+    }
+
+    SERVICES.forEach(s => container.appendChild(createCard(s)));
+
+    // Demo contact submit
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Demo form — replace with your server or Netlify/Forms/POST handler.');
+    });
+  </script>
+  <script src="services.js"></script>
+</body>
+</html>
